@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Japan JanPlan 2025</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="blog.css">
     </head>
 </html>
 
@@ -10,16 +10,46 @@
     <div id="header">
         <div class="container">
             <nav>
-                <ul>
-                    <li>Project</li>
-                    <li><a href="blog.html">Blog</a></li>
+                <ul class="left">
+                    <!-- <li>
+                        <div class="header-text">
+                            <h1>Japan JanPlan 2025</h1>
+                        </div></li> -->
+                    <li class="header-text" data-en="Japan JanPlan 2025" data-jp="日本 ジャンプラン 2025">Japan JanPlan 2025</li>
+                    <li><a href="index.html" data-en="Project" data-jp="プロジェクト">Project</a></li>
+                    <li><a href="blog.html" data-en="Blog" data-jp="ブログ">Blog</a></li>
+                </ul>
+
+                <ul class="right">
+                    <li>Language: </li>
+                    <li><a href="#" id="english">English</a></li>
+                    <li><a href="#" id="japanese">日本語</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="header-text">
-            <h1>Japan JanPlan 2025</h1>
-        </div>
     </div>
+
+    <script>
+        document.getElementById('english').addEventListener('click', function() {
+            switchLanguage('en');
+        });
+
+        document.getElementById('japanese').addEventListener('click', function() {
+            switchLanguage('jp');
+        });
+
+        function switchLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.querySelectorAll('[data-en]').forEach(function(element) {
+                element.textContent = element.getAttribute('data-' + lang);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+                const savedLanguage = localStorage.getItem('language') || 'en';
+                switchLanguage(savedLanguage);
+            });
+    </script>
 </body>
 
 <body>
