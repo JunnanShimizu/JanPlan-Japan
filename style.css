@@ -1,5 +1,17 @@
 body{
-    background-color: whitesmoke;
+    background-color: cadetblue;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li{
@@ -8,13 +20,24 @@ nav ul li{
     margin: 10px 20px;
 }
 
-.header-text h1{
+nav ul.left li {
+    margin-right: 20px;
+}
+
+nav ul.right {
+    margin-left: auto;
+}
+
+.header-text h1 {
     font-size: 30px;
 }
 
-.header-text{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    text-align: right;
+.scaled-image {
+    max-width: 300px;
+    height: auto;
 }
+
+#note {
+    font-size: 30px;
+}
+
