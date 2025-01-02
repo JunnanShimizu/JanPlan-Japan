@@ -1,3 +1,7 @@
+body{
+    background-color: whitesmoke;
+}
+
 nav ul li{
     display: inline-block;
     list-style: none;
