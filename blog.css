@@ -1,5 +1,6 @@
 body{
     background-color: cadetblue;
+    font-size: 22px;
 }
 
 nav {
@@ -34,10 +35,14 @@ nav ul.right {
 }
 
 .scaled-image {
-    max-width: 300px;
+    max-height: 500px;
     height: auto;
 }
 
 #note {
     font-size: 30px;
+}
+
+li {
+    font-size: 20px;
 }
