@@ -8,64 +8,6 @@ html, body{
 ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
-/* Month header */
-.month {
-  padding: 10px 25px;
-  width: 100%;
-  background: #1abc9c;
-  text-align: center;
-}
-
-/* Month list */
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-/* Weekdays (Mon-Sun) */
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color:#ddd;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
-}
-
-/* Days (1-31) */
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 100px;
-  font-size:12px;
-  color: #777;
-}
-
-/* Highlight the "current" day */
-.days li .active {
-  padding: 5px;
-  background: #1abc9c;
-  color: white !important
-}
 
 .scroll-container {
     scroll-snap-type: y mandatory;
@@ -143,4 +85,94 @@ li {
 
 #section4 {
     background-color: #ffc233;
+}
+
+.calendar {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 1.5%;
+    border-radius: 15px;
+}
+
+.calendar .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vw;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    font-weight: 300;
+}
+
+.calendar .month .year {
+    font-weight: 600;
+}
+
+/* .calendar .month .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #0a3d62;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 40px;
+    transition-duration: .2s;
+    position: relative;
+} */
+
+.calendar .days {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    color: #999;
+    font-weight: 100;
+    margin-bottom: 2%;
+    font-style: italic;
+    font-size: 1.7vw;
+}
+
+.calendar .days span {
+    width: 7vw;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.calendar .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar .dates button {
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vw;
+    justify-self: center;
+    align-self: center;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 25%;
+    margin: 0.5vw;
+    transition-duration: 0.5s;
+}
+
+.calendar .dates button:hover {
+    background: #eee;
+}
+
+.calendar .dates button:focus {
+    background: #0a3d62;
+    color: #fff;
+    font-weight: 600;
+}
+
+.other-month {
+    color: #999;
 }
