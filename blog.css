@@ -22,11 +22,13 @@ html, body{
 
 .split-left {
     flex: 1;
-    margin-right: 1px;
+    margin-right: 20px;
+    overflow: hidden;
+    height: 100%;
 }
 
-.split-left ul{
-    font-size: clamp(0.8vh, 1vh, 1vh)
+.split-left ul li{
+    font-size: calc(0.84vh + 0.84vw)
 }
 
 .split-right{
