@@ -28,7 +28,7 @@ html, body{
 }
 
 .split-left ul li{
-    font-size: 2.3vh
+    font-size: calc(0.7vh + 0.7vw)
 }
 
 .split-right{
