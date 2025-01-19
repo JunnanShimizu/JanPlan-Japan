@@ -1,6 +1,6 @@
 html, body{
     background-color: cadetblue;
-    font-size: 2vw;
+    font-size: calc(1vh + 1vw);
     scroll-behavior: smooth;
     overflow-x: hidden;
     font-family: Verdana, sans-serif;
