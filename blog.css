@@ -17,7 +17,7 @@ html, body{
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     flex-direction: row; /* Default to side-by-side layout */
 }
 
@@ -29,7 +29,8 @@ html, body{
 }
 
 .split-left ul li{
-    font-size: calc(0.7vh + 0.7vw)
+    margin-left: -25px;
+    font-size: calc(0.7vh + 0.7vw);
 }
 
 .split-right{
