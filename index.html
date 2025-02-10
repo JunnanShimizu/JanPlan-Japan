@@ -1,58 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Japan JanPlan 2025</title>
+        <meta charset="UTF-8"/>
         <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <title>Japan JanPlan 2025</title>
     </head>
 </html>
 
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <ul class="left">
-                    <!-- <li>
-                        <div class="header-text">
-                            <h1>Japan JanPlan 2025</h1>
-                        </div></li> -->
-                    <li class="header-text" data-en="Japan JanPlan 2025" data-jp="日本 ジャンプラン 2025">Japan JanPlan 2025</li>
-                    <li><a href="index.html" data-en="Project" data-jp="プロジェクト">Project</a></li>
-                    <li><a href="blog.html" data-en="Blog" data-jp="ブログ">Blog</a></li>
-                </ul>
-
-                <ul class="right">
-                    <li>Language: </li>
-                    <li><a href="#" id="english">English</a></li>
-                    <li><a href="#" id="japanese">日本語</a></li>
-                </ul>
-            </nav>
+    <header class="page-start">
+        <div class="background"></div>
+        <h1>Beneath the Rising Sun</h1>
+        <h2>An Exploration of Japan's Complex Identity</h2>
+        <div class="image-container">
+            <img src="images/rice farming old.jpg" alt="Old Farming Painting" class="scaled-image left">
+            <img src="images/shibuya.jpeg" alt="Shibuya Crossing" class="scaled-image center">
+            <img src="images/rice farm old 2.jpg" alt="Rice Farming Old" class="scaled-image right">
         </div>
-    </div>
+        <h3>An anthropological exploration of Japan's technological and agricultural sectors and their influence on national identity.</h3>
 
-    <script>
-        document.getElementById('english').addEventListener('click', function() {
-            switchLanguage('en');
-        });
+        <div class="down-arrow"></div>
+    </header>
 
-        document.getElementById('japanese').addEventListener('click', function() {
-            switchLanguage('jp');
-        });
+    <section class="body">
+        <div class="title fade-in">
+            <h1>Japan's Global Presence</h1>
+        </div>
+        <div class="split-container fade-in">
+            <div class="body-text split-left">
+                <h1>
+                    Japan is a small island nation in East Asia, yet its global presence is substantial. 
+                    It boasts the fourth-largest economy and the second-largest research and development 
+                    budget in the world, continuously driving innovation in fields such as robotics, automation, 
+                    and space exploration. Japan has cemented itself as a top asset in the global economy, 
+                    serving as a major exporter of automobiles, consumer electronics, and visual media to 
+                    Western markets. This has reinforced its image as a high-tech glamorious nation.
+                </h1>
+            </div>
+            <div class="split-right">
+                <img src="images/top-10-economies.jpg" alt="Top 10 Economies" class="scaled-image">
+            </div>
+        </div>
 
-        function switchLanguage(lang) {
-            localStorage.setItem('language', lang);
-            document.querySelectorAll('[data-en]').forEach(function(element) {
-                element.textContent = element.getAttribute('data-' + lang);
-            });
-        }
+        <div class="split-container fade-in">
+            <div class="split-left-alt">
+                <img src="images/japanese car brands.webp" alt="Japanese Car Brands" class="scaled-image">
+            </div>
+            <div class="body-text split-right-alt">
+                <h1>
+                    Japanese commodities are widely seen throughout the U.S., from cars by major brands like 
+                    Toyota and Honda to video games from Nintendo and Sega, as well as popular media like anime 
+                    and manga. This large presence contributes to Japan's image as a high-tech, futuristic 
+                    nation, often associated with cyberpunk aesthetics, advanced technology, and a distinctive 
+                    urban environment.
+                </h1>
+            </div>
+        </div>
 
-        document.addEventListener('DOMContentLoaded', function() {
-                const savedLanguage = localStorage.getItem('language') || 'en';
-                switchLanguage(savedLanguage);
-            });
-    </script>
-</body>
+        <div class="title fade-in">
+            <h1>Exploring Japan</h1>
+        </div>
+        
+        <div class="body-text fade-in">
+            <h1>
+                To gain a deeper understanding of Japan, I traveled there to explore its infrastructure from an anthropological perspective 
+                and uncover the reality behind its Western perception. With most countries, their perception from foreigners is heavily dictated 
+                by their major cities, and Japan is no different. Tokyo and Osaka are the top two major cities in Japan — the Greater Tokyo Area being the largest 
+                metropolitan area in the world. It is no surpise that many foreigners perceive Japan with a cyberpunk aesthetic with some of the largest tourist 
+                attractions looking like these:
+            </h1>
+        </div>
+        <div class="image-container fade-in">
+            <img src="images/shibuya.jpeg" alt="Shibuya Crossing" class="scaled-image left">
+            <img src="images/ginza cyberpunk.jpg" alt="Old Farming Painting" class="scaled-image left">
+            <img src="images/akihabara cyberpunk.jpg" alt="Rice Farming Old" class="scaled-image right">
+        </div>
 
-<body>
-    <img src="images/work-in-progress.gif" alt="Work In Progress">
+        <div class="body-text fade-in">
+            <h1>
+                For the most part, based on my experience, Japan does live up to its glamorous portrayal. I visited several of these iconic destinations, starting with Akihabara in Tokyo. Known as Tokyo's "Electric Town," Akihabara is home to a vast array of stores, many reflecting the area's electronics, anime, and gaming culture. From multi-story shops filled with the latest technology to retro arcades, maid cafés, and anime stores, it perfectly embodies the vibrant image of Japan that many foreigners expect.
+            </h1>
+        </div>
+
+        <div class="body-text fade-in">
+            <h1>
+                The next area I visited was Ginza in Tokyo, one of the city's most famous and upscale neighborhoods. While it has fewer flashy signs compared to Akihabara and other parts of Tokyo, the hundreds of designer stores, spotless streets, and tall buildings reinforce the Western perception of Japan as a high-tech, glamorous nation. I visited popular attractions like the 12-story Uniqlo and the Wako Store in Ginza, but even just strolling through the area, you come across some truly amazing sights like these:
+            </h1>
+        </div>
+        <div class="image-container fade-in">
+            <img src="images/ginza space cats.jpeg" alt="Ginza Space Cat" class="scaled-image left">
+            <img src="images/ginza super car.jpeg" alt="Ginza Super Car" class="scaled-image right">
+        </div>
+        
+        <div class="body-text fade-in">
+            <h1>
+                I also visited Shibuya, one of Tokyo's busiest districts, with the iconic Shibuya Crossing offering a perfect example of the area's energy and atmosphere. Shibuya Station, which is one of the busiest stations in all of Japan, houses an impressive piece of technology, though I didn't get to see it, is the piezoelectric energy-generating floor tiles. Like Akihabara, Shibuya exudes glamour with its bright neon signs, spotless streets, and a large variety of shops.
+            </h1>
+        </div>
+
+        <div class="image-container fade-in">
+            <img src="images/shibuya 2.jpeg" alt="Shibuya" class="scaled-image left">
+            <img src="images/shibuya 3.jpeg" alt="Shibuya" class="scaled-image left">
+            <img src="images/shibuya 1.jpeg" alt="Shibuya" class="scaled-image right">
+        </div>
+
+        <div class="body-text fade-in">
+            <h1>
+                The other face of Japan is found in its preservered history. The ancient temples, historic castles, and traditional gardens are all testaments to a history rich in tradition, 
+                and contribute significantly to Japan's identity. In fact, some of Japan's more popular tourist attractions are these historic landmarks, making it a significant contributor
+                to foreigners perception of the nation.
+            </h1>
+        </div>
+
+        <div class="image-container fade-in">
+            <img src="images/horyuji2.JPG" alt="Koryuji" class="scaled-image left">
+            <img src="images/kiyomizu 1.JPG" alt="Kiyomizu" class="scaled-image left">
+            <img src="images/todaiji4.JPG" alt="Todaiji" class="scaled-image right">
+        </div>
+
+        <div class="title fade-in">
+            <h1>Under the Colorful Exterior</h1>
+        </div>
+
+        <div class="body-text fade-in">
+            <h1>
+                One thing you'll quickly notice about Japan is its deep-rooted farming culture. While the country is often recognized for its bustling cities and historic landmarks, agriculture has been the foundation of its infrastructure for thousands of years—a legacy that continues today. Just a short commute from the busiest streets of Tokyo or Osaka, or a few minutes from some of the world's oldest and largest temples, you'll find farmland. From small household gardens growing fresh vegetables to expansive rice paddies stretching across the countryside, agriculture remains an integral part of Japan's landscape and identity.
+            </h1>
+        </div>
+
+        <div class="split-container fade-in">
+            <div class="body-text split-left">
+                <h1>
+                    In order to examine this culture further, I spent a week in Hamamatsu which is the city where my Mother is from. I stayed with my Aunt, and we explored places of
+                    agricultural significance. To start, I went to my Grandmother's house to celebrate the new year. On this property, you will find a third of it taken by gardening space
+                    where radishes and other vegetables are grown. The yield from these small plots would help feed the family, and the surplus would be sold on a shelf on the street (which
+                    is completed based on the honor system). 
+                </h1>
+            </div>
+            <div class="split-right">
+                <img src="images/grandma-farm.JPG" alt="Grandmother's Farm" class="scaled-image-large">
+            </div>
+        </div>
+
+        <div class="body-text fade-in">
+             <h1>
+                The Hamamatsu area is also home to hundreds of greenhouses that allow crops to be grown year-round. The region's ideal climate—plenty of sunshine and little rainfall—makes it well-suited for this type of agriculture. These greenhouses cultivate a wide variety of crops, and during our visit, we even came across an unagi (eel) farm. However, the plastic covering was coated in algae, preventing us from seeing inside, but we were able to peak into an empty one which is shown below.
+             </h1>
+        </div>
+
+        <div class="image-container fade-in">
+            <img src="images/greenhouse 2.JPG" alt="Hamamatsu Greenhouse" class="scaled-image left">
+            <img src="images/greenhouse 1.JPG" alt="Hamamatsu Greenhouses" class="scaled-image left">
+            <img src="images/unagi farm.JPG" alt="Hamamatsu Unagi Farm" class="scaled-image right">
+        </div>
+
+        <div class="split-container fade-in">
+            <div class="body-text split-left">
+                <h1>
+                    Japan is located on the "Ring of Fire," making it a mountainous region prone to earthquakes and tsunamis. As a result, only 11.5% of the country's land is suitable for growing crops. This partially explains the large number of small plots in suburban and rural areas, but Japan has also implemented other innovative farming methods, such as terrace farming which terraforms mountainous regions into farmable land. Such innovations have contributed to some of the highest crop yields per unit area in the world.
+                </h1>
+            </div>
+            <div class="split-right">
+                <img src="images/rice-fields-mountain.JPG" alt="Terrace Farming" class="scaled-image-large">
+            </div>
+        </div>
+
+        <div class="body-text fade-in">
+            <h1>
+                To dive deeper into Japan's agricultural identity, I spent a week with a family of five on a property in Morimachi. During my stay, I helped with various chores, like feeding chickens, collecting leaves and making compost, cutting wood, excavating the land, harvesting bamboo, and picking radishes. The family makes the most of their large property, using the bamboo for building gardening patches, clothes hangers, and even creating a nagashi somen setup for the kids. The chickens are fed tofu byproducts and food scraps, and their eggs are used for meals. In the backyard, they grow shiitake mushrooms on logs and gather firewood from the property to heat the house. This experience highlighted the resourcefulness I often see in Japanese culture.
+            </h1>
+        </div>
+
+        <div class="image-container fade-in">
+            <img src="images/split wood.JPG" alt="Split Wood" class="scaled-image left">
+            <img src="images/chickens.JPG" alt="Chickens" class="scaled-image left">
+            <img src="images/trench.JPG" alt="Excavating" class="scaled-image right">
+        </div>
+
+        <div class="image-container fade-in">
+            <img src="images/Growing shiitake.JPG" alt="Growing Shiitake Mushrooms" class="scaled-image left">
+            <img src="images/radish patch.JPG" alt="Radish Patch" class="scaled-image left">
+            <img src="images/leaves and grass.JPG" alt="Compost" class="scaled-image right">
+        </div>
+
+        <div class="title fade-in">
+            <h1>Takeaways</h1>
+        </div>
+
+        <div class="body-text fade-in">
+            <h1>
+                On the surface, Japan has two distinct sides: one is its long and complex history, preserved in Shinto shrines, Buddhist temples, and historic monuments; the other is its high-tech, cyberpunk-inspired society, with cutting-edge infrastructure, neon-lit skylines, and an optimal transportation system.  This is how many foreigners perceive Japan, and rightfully so, as these are the glamorous tourist attractions that people travel across the world for. However, the true foundation of Japanese identity lies in its agriculture. Beyond shaping the traditional diet, agriculture reflects the country's deep connection to nature and its traditions. Many Japanese people believe that humans live amongst nature and not above it, and this perspective fosters the culture of respect that Japan is known for. Additionally, agriculture mirrors the simplicity valued by many in Japan. It requires consistency and patience, qualities that are deeply reflected in Japan's work culture. Although some may consider it toxic, the Japanese workforce is known for its tireless and consistent effort in the work they accomplish. In short, Japanese agriculture is as integral to the culture as its world heritage sites and bustling cities, embodying the country's customs, beliefs, and way of life.
+            </h1>
+        </div>
+
+    </section>    
+
+    <footer>
+        <h1 class="body-text fade-in">I would like to thank many people for making this possible. Here is a list (but not limited to):</h1>
+        <ul class="fade-in">
+            <li>Colby College for funding this project.</li>
+            <li>Laura Nuffer for sponsoring me for this project.</li>
+            <li>My Dad for taking me around a bunch of places and giving me valuable information, <br>and letting me stay over.</li>
+            <li>My Aunt and Uncle for taking care of me, driving me around, feeding me!</li>
+            <li>The Ouishi Family for letting me stay in Morimachi and for the opportunity to learn.</li>
+            <li>My mom for supporting me.</li>
+            <li>And everyone else that has followed me on this journey!</li>
+        </ul>
+
+        <h1 class="body-text fade-in">
+            Here is the link to my blog if you would like to know what I did day by day: <a href="https://junnanshimizu.github.io/JanPlan-Japan/blog.html">blog</a>
+        </h1>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 

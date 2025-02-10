@@ -1,43 +1,265 @@
-body{
-    background-color: cadetblue;
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
+header, footer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    /* background-image: linear-gradient(to top, #bc002d 0%, #ffffff 100%); */
 }
 
-nav ul.left li {
-    margin-right: 20px;
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/japan-flag-dirty.jpg') no-repeat center center/cover;
+    filter: blur(25px);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
 
-nav ul.right {
-    margin-left: auto;
+header h1{
+    margin-top: 6vh;
+    font-size: 3.5vw;
+    margin-bottom: 5px;
 }
 
-.header-text h1 {
-    font-size: 30px;
+header h2{
+    font-size: 2vw;
+}
+
+header img {
+    margin: 30px;
+}
+
+header h3 {
+    text-align: center;
+    margin-left: 120px;
+    margin-right: 120px;
+    font-size: 1.8vw;
+}
+
+.body{
+    height: 1008vh;
+    background-image: linear-gradient(to bottom, #09203f 0%, #537895 100%);
+    justify-self: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.body-text{
+    margin: 30px;
+}
+
+footer {
+    height: 150vh;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);}
+
+footer ul li{
+    font-size: 2vw;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-start h1, .page-start h2, .page-start h3, .page-start img{
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.page-start h1 {
+    animation-delay: 0s;
+}
+
+.page-start h2 {
+    animation-delay: 1.8s;
+}
+
+.page-start .center {
+    animation-delay: 4s;
+}
+
+.page-start .left {
+    animation-delay: 3.2s;
+}
+
+.page-start .right {
+    animation-delay: 3.6s;
+}
+
+.page-start h3 {
+    animation-delay: 5.5s;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
 }
 
 .scaled-image {
-    max-width: 300px;
-    height: auto;
+    width: 80vh;
+    border-radius: 20px;
 }
 
-#note {
-    font-size: 30px;
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .left, .right {
+    margin: 0 10px;
+    width: 40vw;
+    max-width: 100%;
+  }
+  
+  .center {
+    max-width: 100%;
+    width: 45vw;
+    margin: 0 10px;
+  }
+
+  .down-arrow {
+    position: absolute;
+    top: calc(100vh - 60px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 30px;
+    border-radius: 2px;
+    animation: jumpInfinite 1.5s infinite;
+    opacity: 0;
+    animation: jumpInfinite 1.5s infinite, fadeInArrow 2s ease-in-out forwards; /* Apply jump and fade-in */
+    animation-delay: 9s;
+  }
+  
+  .down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+  }
+  
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 10px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  @keyframes fadeInArrow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+.title{
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 50px;
+    color: lightgray;
+}
+
+.title h2{
+    font-size: 1.4vw;
+}
+
+.split-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px;
+    flex-direction: row;
+}
+
+.split-left {
+    flex: 3;
+    margin-right: 20px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.split-right{
+    flex: 1;
+}
+
+.split-left-alt {
+    flex: 2; /* Alternative: Left container takes up less space */
+    overflow: hidden;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.split-right-alt {
+    flex: 3; /* Alternative: Right container takes up more space */
+}
+
+.split-left-alt .scaled-image{
+    width: 35vw;
+}
+
+.split-right .scaled-image{
+    /* margin: 30px; */
+    margin-top: 30px;
+    width: 20vw;
+}
+
+.body-text h1{
+    font-size: 1.6vw;
+    line-height: 60px;
+    color: lightgray;   
+}
+
+.body-text h2{
+    font-size: 1.5vw;
+    color: lightgray;   
+}
+
+.scaled-image-large{
+    width: 40vw;
+    border-radius: 20px;
+}
+
+footer .body-text{
+    color: black;
+}
