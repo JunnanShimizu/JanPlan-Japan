@@ -1,337 +1,390 @@
-html, body{
-    background-color: cadetblue;
-    font-size: 16px;
+:root {
+    --paper: #f4f0e9;
+    --ink: #17232b;
+    --muted: #6f7b7e;
+    --blue: #173b4a;
+    --coral: #c9654c;
+    --line: rgba(23, 35, 43, 0.16);
+    --sans: "Montserrat", Arial, sans-serif;
+    --serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
     overflow-x: hidden;
-    font-family: Verdana, sans-serif;
-    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-    margin: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+}
+
+a {
+    color: inherit;
 }
 
 .scroll-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-}
-
-.split-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     width: 100%;
-    padding: 10px;
-    flex-direction: row; /* Default to side-by-side layout */
 }
 
-.split-left {
-    flex: 1;
-    margin-right: 20px;
-    overflow: hidden;
-    height: 100%;
+.full-page {
+    min-height: auto;
+    width: 100%;
+    padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem);
+    scroll-margin-top: 5rem;
 }
 
-.split-left ul li{
-    margin-left: -25px;
-    font-size: calc(0.7vh + 0.7vw);
+#home {
+    min-height: 100svh;
+    padding-top: 1.25rem;
+    background:
+        linear-gradient(135deg, rgba(219, 231, 232, 0.88), rgba(244, 240, 233, 0.92)),
+        url("images-optimized/japan-flag-dirty.jpg") center / cover;
 }
 
-.split-right{
-    flex: 1;
+#home-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: min(100%, 90rem);
+    margin: 0 auto 5rem;
+    padding: 0.75rem 0;
+    background: rgba(244, 240, 233, 0.78);
+    backdrop-filter: blur(14px);
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 nav ul {
     display: flex;
-    list-style-type: none;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: 0;
     padding: 0;
+    list-style: none;
+}
+
+nav ul li {
     margin: 0;
 }
 
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-    font-size: 1vw;
+nav a {
+    text-decoration: none;
 }
 
-nav ul.left li {
-    margin-right: 1vh;
+nav a:hover,
+nav a:focus-visible {
+    color: var(--coral);
 }
 
-nav ul.right {
-    margin-left: auto;
+.header-text {
+    font-weight: 700;
 }
 
-li {
-    font-size: 20px;
+#home > .split-container {
+    width: min(100%, 90rem);
+    margin: 0 auto;
 }
 
-.full-page {
-    width: 100%; /* Full viewport width */
-    min-height: 100vh;
-    height: auto;
-    padding: 2rem 0;
-    justify-content: center;
-    align-items: center;
-    /* font-family: Arial, sans-serif; */
-    scroll-snap-align: start;
+.split-container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1.15fr);
+    gap: clamp(2rem, 7vw, 8rem);
+    align-items: start;
+    width: min(100%, 90rem);
+    margin: 0 auto;
+}
+
+.split-left,
+.split-right {
+    min-width: 0;
+    margin: 0;
+}
+
+#home .split-left {
+    align-self: center;
+    max-width: 38rem;
+}
+
+#home h2 {
+    max-width: 12ch;
+    margin: 0 0 1.5rem;
+    color: var(--blue);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+}
+
+#home p {
+    max-width: 38rem;
+    margin: 1rem 0;
+    color: #405156;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    line-height: 1.65;
 }
 
 .calendar {
-    display: inline-grid;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    padding: 1%;
-    border-radius: 15px;
+    width: min(100%, 38rem);
+    margin-left: auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 1.5rem 4rem rgba(23, 35, 43, 0.1);
+}
+
+.calendar .caption {
+    display: none;
 }
 
 .calendar .month {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-size: 2vw;
-    margin-top: 1%;
-    margin-bottom: 4%;
-    font-weight: 300;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: var(--blue);
+    font-family: var(--sans);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    letter-spacing: 0.03em;
 }
 
 .calendar .month .year {
-    font-weight: 600;
+    color: var(--muted);
+    font-weight: 400;
 }
 
-/* .calendar .month .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #0a3d62;
-    width: 5vw;
-    height: 5vw;
-    border-radius: 40px;
-    transition-duration: .2s;
-    position: relative;
-} */
-
-.calendar .days {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(7, 1fr);
-    color: #999;
-    font-weight: 100;
-    margin-bottom: 2%;
-    font-style: italic;
-    font-size: 1.7vw;
+.calendar .month .nav {
+    color: var(--coral);
 }
 
-.calendar .days span {
-    width: 7vw;
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-}
-
+.calendar .days,
 .calendar .dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+}
+
+.calendar .days {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .calendar .dates .calendar-date {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-    background: transparent;
-    color: inherit;
+    aspect-ratio: 1;
+    min-width: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5vw;
-    justify-self: center;
-    align-self: center;
-    width: 7vw;
-    height: 7vw;
-    border-radius: 25%;
-    margin: 0.5vw;
-    transition-duration: 0.5s;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
-.calendar .dates .calendar-date.na:hover {
-    background: #fff;
-    cursor:default;
+.calendar .dates a.calendar-date:hover,
+.calendar .dates a.calendar-date:focus-visible {
+    border-color: var(--coral);
+    background: rgba(201, 101, 76, 0.1);
+    color: var(--coral);
+    outline: none;
 }
 
-.calendar .dates .calendar-date:hover {
-    background: #eee;
+.calendar .dates .other-month,
+.calendar .dates .na {
+    color: #a8b0af;
 }
 
-.calendar .dates .calendar-date:focus-visible {
-    background: #0a3d62;
-    color: #fff;
-    font-weight: 600;
-    outline: 3px solid #0a3d62;
-    outline-offset: 2px;
+.journal-entry {
+    border-top: 1px solid var(--line);
+    background: var(--paper);
 }
 
-.other-month {
-    color: #999;
+.journal-entry:nth-child(even) {
+    background: #e9efed;
 }
 
-.lazy {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.lazy-loaded {
-    opacity: 1;
-}
-
-* {box-sizing:border-box}
-
-.slideshow-container {
-    height: 95vh;
-    position: relative;
-    margin: auto;
-    display: flex;
+.journal-entry .split-container {
     align-items: center;
+}
+
+.journal-copy {
+    order: 1;
+}
+
+.journal-copy time {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--coral);
+    font-family: var(--sans);
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.journal-copy ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.journal-copy li {
+    position: relative;
+    margin: 0 0 1rem;
+    padding-left: 1.35rem;
+    color: #405156;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.65;
+}
+
+.journal-copy li::before {
+    content: "";
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--coral);
+}
+
+.journal-gallery {
+    position: relative;
+    order: 2;
+    min-height: 24rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: #dce5e4;
 }
 
 .mySlides {
-  display: none;
-  height: 100%;
-  width: 100%;
-}
-
-.mySlides img{
-    /* border-radius: 30px; */
-    height: 100%;
-    object-fit: contain;
+    display: none;
     width: 100%;
+    height: 100%;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 14px 14px 0;
-  user-select: none;
+.mySlides img {
+    display: block;
+    width: 100%;
+    height: clamp(20rem, 48vw, 38rem);
+    object-fit: contain;
+    background: #dce5e4;
 }
 
-.prev:focus-visible, .next:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
+.empty-slideshow {
+    min-height: 8rem;
 }
 
-/* Position the "next button" to the right */
+.prev,
 .next {
-  right: 0;
-  border-radius: 14px 0 0 14px;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    transform: translateY(-50%);
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(23, 35, 43, 0.62);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+.prev:hover,
+.next:hover,
+.prev:focus-visible,
+.next:focus-visible {
+    background: var(--coral);
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation: fade-in 500ms ease;
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+@keyframes fade-in {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
 }
 
-/* Media queries for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
+    #home-header {
+        margin-bottom: 3rem;
+    }
+
+    nav {
+        align-items: flex-start;
+        font-size: 0.62rem;
+    }
+
+    nav ul {
+        gap: 0.65rem;
+    }
+
+    #home > .split-container,
     .split-container {
-        flex-direction: column; /* Stack components vertically */
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .split-left, .split-right {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px; /* Add some space between stacked components */
+    #home .split-left {
+        max-width: none;
     }
 
-    .slideshow-container {
-        height: min(70svh, 32rem);
+    .calendar {
+        margin: 0;
     }
 
-    nav ul li {
-        margin: 0.5rem;
-        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    .journal-copy {
+        order: 1;
     }
 
-    .calendar .month {
-        font-size: clamp(1rem, 5vw, 1.5rem);
+    .journal-gallery {
+        order: 2;
+        min-height: 18rem;
     }
 
-    .calendar .days,
-    .calendar .dates .calendar-date {
-        font-size: clamp(0.7rem, 3vw, 1rem);
+    .mySlides img {
+        height: min(70svh, 30rem);
     }
+}
 
-    .calendar .days span,
-    .calendar .dates .calendar-date {
-        width: 10vw;
-        height: 10vw;
-        max-width: 3.5rem;
-        max-height: 3.5rem;
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }

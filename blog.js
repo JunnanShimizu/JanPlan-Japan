@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     container.insertAdjacentHTML('beforeend', blogEntries.map((entry, index) => `
-        <section id="${entry.id}" class="full-page">
+        <section id="${entry.id}" class="full-page journal-entry">
             <div class="split-container">
-                <div class="split-left">
+                <article class="split-left journal-copy">
                     <time datetime="${toISODate(entry.id)}">${entry.date}</time>
                     <ul>
                         ${entry.items.map((item) => `<li>${item}</li>`).join('')}
                     </ul>
-                </div>
-                <div class="slideshow-container split-right ${entry.images.length ? '' : 'empty-slideshow'}" id="ss-${entry.id}">
+                </article>
+                <div class="slideshow-container split-right journal-gallery ${entry.images.length ? '' : 'empty-slideshow'}" id="ss-${entry.id}">
                     ${entry.images.map((image) => `
                         <div class="mySlides fade">
                             <img src="${image.src}" alt="${image.alt}" loading="lazy">
